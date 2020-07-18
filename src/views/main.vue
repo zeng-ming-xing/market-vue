@@ -70,9 +70,11 @@ export default {
     );
   },
   mounted() {
+    
     this.$refs.scl.scroll.on("scroll", position => {
       const y=Math.abs(position.y)
       //元素距离父元素顶部的距离
+      //进行吸顶操作，以及显示显示返回顶部按钮操作
       const aa=this.$refs.ccc.$el.offsetTop
       if (y < aa) {
         this.displ = false;
@@ -85,6 +87,7 @@ export default {
   },
   methods: {
     gethomegoods(type) {
+      //触底加载更多时请求的数据
       const p = this.goods[type].page + 1;
       gethomegoods(type, p).then(res => {
         console.log(res.data.data.list);
@@ -93,7 +96,7 @@ export default {
         this.goods[type].page +=1;
         this.$refs.scl.scroll.finishPullUp();
       });
-    },
+    },//通过点击的按钮决定传递的数据
     qiehuan(index) {
       switch (index) {
         case 0:
@@ -108,9 +111,11 @@ export default {
       }
     },
     backclick() {
+      //返回顶部
       this.$refs.scl.scroll.scrollTo(0, 0, 1000);
     },
     loadMore() {
+      //触底加载更多
        this.gethomegoods(this.current);
      this.$refs.scl.scroll.refresh();
     }

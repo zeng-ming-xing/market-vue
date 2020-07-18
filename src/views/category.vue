@@ -37,6 +37,7 @@ export default {
     },
     methods:{
         getcategory(){
+            //获取全部商品的类别
             getcategory().then(res=>{
             this.list=res.data.data.category.list
             console.log(this.list);
@@ -45,6 +46,7 @@ export default {
             
         },
         getdata(i){
+            //获取某类商品的详细数据
             console.log(this.list[i].maitKey);
             getSubcategory(this.list[i].maitKey).then(res=>{
                 this.categorys=res.data.data.list

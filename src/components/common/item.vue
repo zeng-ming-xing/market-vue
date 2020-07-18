@@ -10,6 +10,7 @@ export default {
     props:{path:String},
     methods:{
           btn(){
+              //进行路由的跳转
               this.$router.replace(this.path)
           }
     }

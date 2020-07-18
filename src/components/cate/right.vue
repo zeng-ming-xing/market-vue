@@ -14,6 +14,7 @@ export default {
     };
   },
   mounted() {
+    //定义滑动对象
     this.warpper = new BScroll(this.$refs.bbb, {
   click:true
     });

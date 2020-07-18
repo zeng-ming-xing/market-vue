@@ -2,7 +2,7 @@
  <div class="params">
      <div style="color:red;font-size:30px;text-align:center">产品参数</div>
      <table class="table">
-         <tr v-for="(item,i) in itemparams.rule[0]" :key="i" class="tr">
+         <tr v-for="(item,i) in itemparams.rule" :key="i" class="tr">
              <td v-for="(v,index) in item" :key="index">{{v}}</td>
          </tr>
      </table>

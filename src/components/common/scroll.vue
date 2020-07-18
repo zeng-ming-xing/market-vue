@@ -25,6 +25,7 @@ export default {
     mounted(){
         //如果ref绑定在一个组件中，我们拿到的是一个组件对象
         //如果绑定在一个普通元素中，我们拿到的是一个元素对象
+        //定义一个滑动对子昂
 this.scroll=new BScroll(this.$refs.wap,{
   probeType:this.proty,
   click:true,

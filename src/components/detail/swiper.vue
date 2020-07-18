@@ -34,9 +34,10 @@ export default {
 
   },
   mounted(){
-    //获取元素的css属性
-
+    
+//开启定时器
 this.startTimer()
+//获取元素的css属性
 let menuList = document.querySelector(".scroll");
 let cc=menuList.getElementsByClassName("swiperbox");
  //console.log(cc);
@@ -46,7 +47,7 @@ this.elwidth=parseInt(width)/4;
 
   },
   methods: {
-    //开始计时器
+    //开始计时器函数
       startTimer(){
         this.timer=setInterval(()=>{
           if(this.index+1==this.banners.length)
