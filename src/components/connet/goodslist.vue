@@ -1,9 +1,9 @@
 <template>
     <div class="goodslist">
           <div v-for="(item,i) in goods" :key="i" class="goodsitem">
-                <a :href="item.link">
-                    <img :src="item.show.img" alt="">
-                </a>
+               
+                    <img :src="item.show.img" alt="" @click="detail(i)">
+               
                 <div class="item-info">
                 <p>{{item.title}}</p>
                 <span style="color:red">{{item.price}}</span>
@@ -18,6 +18,16 @@ export default {
         goods:{
             type:Array,
             defalut:[]
+        }
+    },
+    methods:{
+        detail(i){
+            this.$router.push({
+                path:"/detail",
+                query:{
+                    iid:this.goods[i].iid
+                }
+            })
         }
     }
 }

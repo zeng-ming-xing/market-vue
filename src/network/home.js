@@ -34,3 +34,11 @@ export function getCategoryDetail(miniWallkey, type) {
         }
     })
 }
+export function getDetail(iid) {
+    return request({
+        url: '/api/n3/detail',
+        params: {
+            iid
+        }
+    })
+}

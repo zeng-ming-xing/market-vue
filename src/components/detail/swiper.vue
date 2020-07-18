@@ -2,9 +2,7 @@
 <div class="swiper" >
       <div class="scroll" ref="aaa" :style="{marginLeft:this.index * -this.elwidth+'px' }" @touchstart="touchStart($event)" @touchmove="touchMove($event)" @touchend="touchEnd($event)">
         <div v-for="(item,i) in banners" :key="i" class="swiperbox">
-          <a :href="item.link">
-            <img :src="item.image923"/>
-          </a>
+            <img :src="item"/>
         </div>
       </div>
       <div class="swiperradio" @touchstart.stop="stoptimer" @touchend.stop="startTimer">
@@ -26,25 +24,32 @@ export default {
       endpagex:0,
       startpagex:0,
       distance:0,
-      elwidth:0
+      elwidth:0,
+      leng:0
     };
   },
   created() {
-this.startTimer()
+
+
+
   },
   mounted(){
     //获取元素的css属性
- let menuList = document.querySelector(".scroll");
- let cc=menuList.getElementsByClassName("swiperbox");
+
+this.startTimer()
+let menuList = document.querySelector(".scroll");
+let cc=menuList.getElementsByClassName("swiperbox");
  //console.log(cc);
 let width = window.getComputedStyle(menuList).width;
 this.elwidth=parseInt(width)/4;
+
+
   },
   methods: {
     //开始计时器
       startTimer(){
         this.timer=setInterval(()=>{
-          if(this.index==3)
+          if(this.index+1==this.banners.length)
           {
             this.index=0
           }
@@ -106,10 +111,13 @@ this.elwidth=parseInt(width)/4;
   width: 400%;
   display: flex;
   transition:margin 2s ;
+  height: 40vh;
 }
 .swiper .scroll .swiperbox {
  width: 25%;
   flex-shrink: 0;
+  height: 100%;
+
 }
 .swiper .scroll .swiperbox img {
   width: 100%;

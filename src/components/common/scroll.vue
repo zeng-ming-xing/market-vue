@@ -34,6 +34,7 @@ this.scroll=new BScroll(this.$refs.wap,{
       this.scroll.on('pullingUp',()=>{
         this.$emit('pullingUp')
       })
+      console.log(this.scroll);
     }
 }
 </script>

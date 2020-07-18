@@ -10,7 +10,10 @@ const routes = [{
         path: '/main',
         name: 'main',
         component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/main.vue')
+            import ( /* webpackChunkName: "about" */ '../views/main.vue'),
+        meta: {
+            keepAlive: true
+        }
     },
     {
         path: '/category',
@@ -32,7 +35,14 @@ const routes = [{
         name: "profile",
         component: () =>
             import ( /* webpackChunkName: "about" */ '../views/profile.vue')
+    },
+    {
+        path: '/detail',
+        name: 'tail',
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/detail.vue')
     }
+
 ]
 
 const router = new VueRouter({

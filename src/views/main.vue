@@ -1,4 +1,5 @@
 <template>
+
   <div class="main">
     <navbar class="main-nav">
       <div slot="center">购物街</div>
@@ -14,6 +15,7 @@
     <!--native修饰符，在监听组件的事件的时候必须加native修饰符才能正确监听-->
     <backtop class="back" @click.native="backclick" v-show="displ"></backtop>
   </div>
+
 </template>
 <script>
 import navbar from "../components/common/navbar.vue";
@@ -56,6 +58,7 @@ export default {
   created() {
     getmaindata().then(
       res => {
+        //数据请求
         this.banners = res["data"]["data"]["banner"].list;
         this.recommends = res["data"]["data"].recommend.list;
         this.keywords = res["data"]["data"].keywords.list;
@@ -124,26 +127,23 @@ export default {
   font: 1.5em;
   color: white;
   background-color: tomato;
-  position: fixed;
+   position: fixed;
   width: 100%;
   z-index: 999;
-}
+} 
 .hegiht {
   margin-top: 44px;
+
 }
 .content {
   height: calc(100% - 93px);
-  margin-top: 44px;
+   margin-top: 44px; 
   overflow: hidden;
 }
 .fixed{
-  position: fixed;
-  top: 44px;
+  position: fixed; 
+   top: 44px;
   z-index: 9999;
 }
 
-/* .stop {
-  position: sticky;
-  top: 44px;
-} */
 </style>

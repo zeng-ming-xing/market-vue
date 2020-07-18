@@ -17,6 +17,7 @@ export default {
     this.warpper = new BScroll(this.$refs.aaa, {
 click:true
     });
+   
   }
 };
 </script>
