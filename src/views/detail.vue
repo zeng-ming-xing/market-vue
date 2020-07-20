@@ -20,7 +20,7 @@
       <params :itemparams="itemparams" ref="aaa"></params>
       <bb :rate="rate.list" ref="bbb"></bb>
       <recommend :skus="skus" ref="ccc" @refsh="resh"></recommend>
-    </scroll>
+    </scroll> 
     <div class="cart">
       <div class="left">
         <div><span>客服</span></div>
@@ -166,15 +166,14 @@ export default {
      product.price=this.Goods.neworice;
      product.iid=this.iid;
      //将商品添加到购物车，这里使用vuex进行状态管理
-       this.$store.commit("addcart",product)
-      }
-     
-    },
+       this.$store.dispatch("addcart",product)
+      },
     resh(){
       //当推荐的图片加载完成的回调函数
       this.$refs.coll.scroll.refresh();
     }
   }
+}
 
 </script>
 <style scoped>
