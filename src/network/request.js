@@ -7,7 +7,7 @@ import axios from "axios"
 // export function request(config, success, err) {
 //     //1创建axios实例
 //     const result = axios.create({
-//         baseURL: "http://120.120.120.:8000",
+//         baseURL: "",
 //         timeout: 5000
 //     })
 //axios的拦截器
@@ -37,7 +37,7 @@ import axios from "axios"
 //也可以，在这里要传递配置参数，使用时request(config).then(res=>{}).catch(err=>{})
 export function request(config) {
     const result = axios.create({
-            baseURL: "http://152.136.185.210:8000",
+            baseURL: "",
             timeout: 5000
         })
         // result.interceptors.response.use(res => {
@@ -52,7 +52,7 @@ export function request(config) {
 //     return new Promise((resolve, reject) => {
 //         //1创建axios实例
 //         const result = axios.create({
-//             baseURL: "http://120.120.120.:8000",
+//             baseURL: "",
 //             timeout: 5000
 //         })
 //         result(config).then(res => {
